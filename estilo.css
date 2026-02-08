@@ -21,9 +21,9 @@ body, html {
   color: white;
 }
 
-background: url('foto2.jpeg') center no-repeat;
-background-size: 80% auto; /* Ejemplo alternativo bonito: url('https://thumbs.dreamstime.com/b/cute-lofi-girl-room-illustration-anime-manga-style-wallpaper-background-design-generative-ai-cute-lofi-girl-room-280194725.jpg') */ filter: brightness(0.45) saturate(1.1); z-index: 1; }
-
+.background { position: absolute; inset: 0; /* === CAMBIA AQUÍ TU IMAGEN DE FONDO === - Si usas archivo local: url('tu-foto.jpg') - Recomendado: pon la foto en la misma carpeta y usa nombre exacto */
+             background: url('foto2.jpeg') center/cover no-repeat; /* Ejemplo alternativo bonito: url('https://thumbs.dreamstime.com/b/cute-lofi-girl-room-illustration-anime-manga-style-wallpaper-background-design-generative-ai-cute-lofi-girl-room-280194725.jpg') */ 
+             filter: brightness(0.45) saturate(1.1); z-index: 1; }
 .content {
   position: relative;
   z-index: 2;
@@ -129,3 +129,4 @@ h1 {
   .play-btn { width: 70px; height: 70px; font-size: 2rem; }
 
 }
+
