@@ -1,0 +1,129 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  background: #000;
+}
+
+.player-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.background { position: absolute; inset: 0; /* === CAMBIA AQUÍ TU IMAGEN DE FONDO === - Si usas archivo local: url('tu-foto.jpg') - Recomendado: pon la foto en la misma carpeta y usa nombre exacto */ background: url('imagen/foto2.jpeg') center/cover no-repeat; /* Ejemplo alternativo bonito: url('https://thumbs.dreamstime.com/b/cute-lofi-girl-room-illustration-anime-manga-style-wallpaper-background-design-generative-ai-cute-lofi-girl-room-280194725.jpg') */ filter: brightness(0.45) saturate(1.1); z-index: 1; }
+
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 20px;
+  max-width: 90%;
+}
+
+h1 {
+  font-size: clamp(2rem, 8vw, 4.5rem);
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.7);
+}
+
+.artist {
+  font-size: clamp(1.1rem, 4vw, 1.8rem);
+  opacity: 0.8;
+  margin-bottom: 3rem;
+}
+
+.progress-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+}
+
+#progress {
+  width: 100%;
+  height: 6px;
+  border-radius: 5px;
+  background: rgba(255,255,255,0.25);
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#progress::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #ff3366;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 10px #ff3366aa;
+  transition: all 0.15s;
+}
+
+#progress:hover::-webkit-slider-thumb {
+  transform: scale(1.3);
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 0.6rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.btn {
+  background: rgba(255,255,255,0.12);
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.25s;
+  backdrop-filter: blur(10px);
+}
+
+.btn:hover {
+  background: rgba(255,255,255,0.25);
+  transform: scale(1.12);
+}
+
+.play-btn {
+  font-size: 2.4rem;
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 51, 102, 0.7);
+}
+
+.play-btn:hover {
+  background: #ff3366;
+  transform: scale(1.15);
+}
+
+/* Responsive para celulares */
+@media (max-width: 500px) {
+  .controls { gap: 1.5rem; }
+  .btn { width: 50px; height: 50px; font-size: 1.5rem; }
+  .play-btn { width: 70px; height: 70px; font-size: 2rem; }
+}
